@@ -21,7 +21,7 @@
    // });
     
     
-    
+   btverde.addEventListener('click' , function(){
     // btverde.addEventListener('click' , function(){
     //    // document.className = '' //Limpar Classe (versao mais simples)
     //     document.body.classList.remove('btazul' , 'btlaranja');
