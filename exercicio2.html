@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio resolvido</title>
+</head>
+
+<body>
+    <script>
+        var primeiro = 10 * 3
+        var segundo = 12 + 5
+        var soma = 5 - (9 * 2)
+        var quarto = soma * ((3 + 4) / 2)
+
+        document.write("O resultado do A é: " + primeiro + ", o resultado da B é: " + segundo +
+           ", o esultado do C é: " + soma + " O resultado da D é:" + quarto)
+
+        var peso = Number(window.prompt("Qual é o seu peso?"))  
+        var altura = Number(window.prompt("Qual é a sua altura?")) 
+        var resultado = peso / (altura*altura)
+        window.alert("Seu IMC é: "+resultado.toFixed(2)) 
+        
+        
+
+        var mercadoria = Number(window.prompt("Qual é o valor da marcadoria?"))
+        var porcentagem = Number(window.prompt("Qual a porcentagem de lucro?"))
+        var result = mercadoria * porcentagem/100
+        alert("O valor do lucro será de: " +result.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}))
+
+
+
+
+    </script>
+    <!-- a) 10 x 3
+    b)12 + 5
+    c) 5 -(9x2)
+    d) 5 -(9x2)x(3+4)/2
+    
+    f) Calcule o seu IMC, lembrando que afórmula é o seu peso dividido pela altura ao quadrado.
+    
+    g) Peça para o usuário digitar um valor de uma mercadoria. Depois peça para ele colocar quantos por cento de lucro em cima da mercadoria ele gostaria de receber . E mostre na tela os resultados em reais.  -->
+
+</body>
+
+</html>

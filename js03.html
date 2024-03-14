@@ -10,11 +10,20 @@
     <script>
        // alert('funcionou!');
        let curso = "Desenvolvedor Front-end";
+       var nome = "Luana"
        var data = new Date();
+       var dia = data.getDate();
+       var mes = data.getMonth()+1; //é preciso incrementar uma posição para dar um get na lista correta.
+       var ano = data.getFullYear();
+       var dataCompletaSimplificada = data.toLocaleDateString()
 
-       document.write(data);
-       console.log(data);
-       alert(curso);
+       //document.write(ano);
+       //console.log(data);
+       alert(dataCompletaSimplificada);
+ //document.write("<p>Olá me chamo <b>"+nome+"</b>, estudo "+curso+", no SENAC. Hoje é:"+dia+"/"+mes+"/"+ano+".</p>");
+ document.write("<p>Olá me chamo <b>"+nome+"</b>, estudo "+curso+", no SENAC. Hoje é:"+dataCompletaSimplificada+".</p>");
+ console.log("Olá me chamo "+nome+", estudo "+curso+", no SENAC. Hoje é:"+dataCompletaSimplificada)
+    
     </script>
     
 </body>
