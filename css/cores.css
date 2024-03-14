@@ -1,0 +1,57 @@
+@charset "utf8";
+/* CSS Geral */
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#container {
+
+    margin: auto;
+    text-align: center;
+}
+
+.btazul,
+.btverde,
+.btlaranja {
+    transition: 2s;
+}
+
+.btazul {
+    background-color: blue;
+}
+
+.btverde {
+    background-color: green;
+}
+
+.btlaranja {
+    background-color: orange;
+}
+
+#btazul,
+#btverde,
+#btlaranja {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+#btazul {
+    background: blue;
+}
+
+#btverde {
+    background: green;
+}
+
+#btlaranja {
+    background: orange;
+}
+
+#textos {
+    font-family: cursive;
+    color: white;
+
+}

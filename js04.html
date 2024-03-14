@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com CSS</title>
+    <style>
+        h1{
+            visibility:visible ;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Trabalhando com CSS em javascript</h1>
+    <button onclick="document.getElementById('titulo').style.color = 'red'">Alterar a cor do Titulo</button>
+    <p id="paragrafo1">Texto com algum tipo de destaque.</p>
+    <button onclick="document.getElementById('paragrafo1').style.color = 'blue'"> Alterar a cor do Paragrafo </button>
+    <p id="paragrafo2">Texto com muito destaque.</p>
+    <button onclick="document.getElementById('paragrafo2').style.fontSize = '50px'" >Alterar o tamanho da fonte</button>
+    <button  onclick="document.getElementById('paragrafo2').style.fontFamily = 'Courier New';document.getElementById('paragrafo2').style.color = 'orange'" >Alterar a fonte</button>
+<hr>
+    <p id="texto">Texto desenvolvido por um clique</p> 
+    <!-- texto transformado -->
+<button onclick="document.getElementById('texto').innerHTML ='Texto transformado'" >Clique aqui</button>
+<p>
+<button onclick="document.getElementById('acesa').src ='img/luz.jpg'" >Ligar</button>
+
+<button id="ocult" onclick="document.getElementById('acesa').style.display = 'none'; document.getElementById('ocult').style.visibility = 'hidden'">Ocultar</button>
+
+<button id="most" onclick="document.getElementById('acesa').style.display = '';document.getElementById('ocult').style.visibility = 'visible'">Mostrar</button>
+
+<button onclick="document.getElementById('acesa').src = 'img/apagada.jpg'">Apagar</button>
+</p>
+<p><img id="acesa" src="img/luz.jpg"></p>
+<p id="caixa"></p>
+
+<script src="js/acoes.js"></script>
+</body>
+</html>
