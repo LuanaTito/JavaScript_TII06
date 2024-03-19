@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Eventos </title>
+    
+</head>
+
+<body>
+    <div id="container"></div>
+    <h1>Acende a Lâmpada</h1>
+
+    <img src="img/apagada.jpeg" id="luz" alt="Lampada Apagada" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()" />
+ 
+   
+   
+   
+   <script>
+        //função = conjunto de comandos ou tecnicamente uma rotina caso eu disparo essa seguencia. 
+        function acendeLampada() { 
+            document.getElementById("luz").src = "img/luz.jpeg";
+        }
+        function apagaLampada() {
+            document.getElementById("luz").src = "img/apagada.jpeg";
+        }
+        function quebraLampada(){
+            document.getElementById("luz").src ="img/quebrada.jpg";
+        }
+    </script>
+
+</body>
+
+</html>
