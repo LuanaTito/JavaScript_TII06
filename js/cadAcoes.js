@@ -1,7 +1,8 @@
 let nome = document.getElementById('nome')
 let idade = document.getElementById('idade')
-let salario = document.getElementById('salario')
-let cargo = document.getElementById('cargo')
+let salario = document.getElementById('.salario')
+//let cargo = document.getElementById('cargo')
+let cargo = document.querySelector('#cargo')
 let btnsalvar = document.getElementById("btnsalvar")
 
 btnsalvar.addEventListener("click" , function (){

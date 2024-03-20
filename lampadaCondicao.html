@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição simples</title>
+</head>
+
+<body>
+    <div id="container"></div>
+    <h1>Acender a Lâmpada</h1>
+
+    <img src="img/apagada.jpg" id="luz" alt="Lampada Apagada" onmousemove="mudarLampada(1)"
+        onmouseout="mudarLampada(2)" onclick="mudarLampada(3)" />
+    <script>
+
+        let quebrada = false;
+        function mudarLampada(tipo){
+            
+            if(tipo == 1){
+                arquivo = "img/luz.jpg"
+            }
+
+            if(tipo == 2){
+                arquivo = "img/apagada.jpg"
+            }
+        
+            if(tipo == 3){
+                arquivo = "img/quebrada.jpg"
+            }
+        
+            if(!quebrada){
+                document.getElementById('luz').src = arquivo
+                if(tipo == 3) {
+                    quebrada = true
+                }
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
