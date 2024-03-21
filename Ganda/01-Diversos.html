@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento JAVASCRIPT</title>
+</head>
+<body>
+    <h1>Exemplo 1</h1>
+   <p id="teste01">Senac Lapa Tito</p>
+   <script>
+       document.getElementById("teste01").innerHTML = "Olá Mundo!";
+   </script>
+
+   <h1>Exemplo 2</h1>
+   <p id="teste02">Bom dia!</p>
+   <button onclick="document.getElementById('teste02').innerHTML = 'Olá Mundo!';">Clique aqui</button>
+
+   <h1>Exemplo 3 - Modificação de  Atributo</h1>
+   <button onclick="document.getElementById('lamp').src = 'lamp-on.gif';">Liga</button>
+   <img id="lamp" src="lamp-off.gif">
+   <button onclick="document.getElementById('lamp').src = 'lamp-off.gif';">Desliga</button>
+
+   <h1>Exemplo 4</h1>
+   <img src="lamp-off.gif" onmouseover="this.src = 'lamp-on.gif';" onmouseout="this.src = 'midias/off.gif';">
+   <!-- "this" representa o próprio elemento (no caso, a imagem) -->
+
+   <h1>Exemplo 5 - Modificando estilo</h1>
+   <button onclick="document.getElementById('teste03').style.fontSize = '2em';">Aumente a fonte</button>
+   <p id="teste03">Olá Mundo</p>
+
+   <h1>Exemplo 6 - Tema escuro</h1>
+   <button onclick="document.body.style.backgroundColor = 'DarkSlateGray';document.body.style.color = 'WhiteSmoke';">Tema Escuro</button>
+
+   <button onclick="document.body.style.backgroundColor = 'white';document.body.style.color = 'black';">Tema Claro</button>
+
+   <h1>Exemplo 7 - Funções</h1>
+   <button id="escuro" onclick="escuro();">Tema escuro</button>
+   <button id="claro" onclick="claro();" style="display:none;">Tema claro</button>
+   <script>
+       //função para ligar tema escuro
+       function escuro(){
+           document.body.style.backgroundColor = 'DarkSlateGray'; // altera cor de fundo
+           document.body.style.color = 'WhiteSmoke'; // altere cor de texto
+           document.getElementById("escuro").style.display = 'none';
+           document.getElementById("claro").style.display = 'block';
+        }
+
+        //função para ligar o tema claro
+        function claro(){
+           document.body.style.backgroundColor = 'white';
+           document.body.style.color = 'black';
+           document.getElementById("escuro").style.display = 'block'; // oculta botão "escuro"
+           document.getElementById("claro").style.display = 'none'; // revela botão "claro"
+        }
+
+        /* comentário
+        de 
+        bloco */
+
+   </script>
+
+    
+</body>
+</html>

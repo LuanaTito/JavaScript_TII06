@@ -16,6 +16,8 @@
     <script>
 
         let quebrada = false;
+        let audio = new Audio("audio/audio_lampada_03.mp3")
+   
         function mudarLampada(tipo){
             
             if(tipo == 1){
@@ -28,19 +30,19 @@
         
             if(tipo == 3){
                 arquivo = "img/quebrada.jpg"
+                //audio.play()
+        
             }
         
             if(!quebrada){
                 document.getElementById('luz').src = arquivo
                 if(tipo == 3) {
                     quebrada = true
+                    audio.play()
+                    
                 }
             }
         }
-
-
-
-
 
     </script>
 

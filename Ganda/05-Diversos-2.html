@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Mostrar a Data</h2>
+	<script>document.write(Date());</script>
+
+<hr>
+	
+<h2>Atrasando o tempo, um texto vai aparecer após 3 segundos...</h2>
+		<script>
+			function timeMsg(){
+				var t=setTimeout("alertMsg()",3000);
+			}
+
+			function alertMsg(){
+				document.write("Senac Lapa Tito");
+			}
+		</script>
+
+<a href="#" onClick="timeMsg()">Clique aqui</a>
+
+<hr>
+
+<h2>Digite um texto, tecla TAB e Veja o que acontece...</h2>
+	
+	<input id="entrada" placeholder="Digite sua mensagem" onblur="mensagem();"> 
+	
+	<script>
+            function mensagem(){
+                let nome = document.getElementById("entrada").value;
+                var str = nome;
+				var str = str.replace(str, "Seu Texto foi alterado via JavaScript, Imagine o que posso fazer em uma ELEIÇÃO...")
+				document.write(str);
+            }
+	</script>
+
+<hr>
+
+</body>
+</html>

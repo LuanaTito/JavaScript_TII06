@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+<body>
+    <h1>Exemplo 1 - Mensagens</h1>
+        <button onclick="document.getElementById('teste01').innerHTML = 'Olá Mundo!';">Mensagem via HTML</button>
+        <p id="teste01"></p>
+
+        <button onclick="window.alert('Olá Mundo');">Mensagem via Pop-up</button>
+
+        <button onclick="document.write('Olá Mundo');">Mensagem via escrita</button>
+
+               
+        <h1>Exemplo 2 - Variáveis</h1>
+        <p>O valor da variável é: <span id="teste02"></span></p>
+        <p>O tipo da varíável é: <span id="teste03"></span></p>
+        <p>O valor da variável é: <span id="teste04"></span></p>
+        <p>O tipo da varíável é: <span id="teste05"></span></p>
+        
+        <script>
+            //let num; // declaração de variável
+           // num = 3; // atribuição de valor
+           let num = 3;
+            document.getElementById("teste02").innerHTML = num;
+            document.getElementById("teste03").innerHTML = typeof num;
+            let txt = "Senac";
+            document.getElementById("teste04").innerHTML = txt;
+            document.getElementById("teste05").innerHTML = typeof txt;
+        </script>
+
+        <h1>Exemplo 3</h1>
+        <input id="teste06" placeholder="Digite seu nome" onblur="mensagem();"> 
+        <!-- onblur: quando o cursor sai do input -->
+        <script>
+            function mensagem(){
+                let nome = document.getElementById("teste06").value;
+                window.alert("Bom dia " + nome);
+            }
+        </script>
+
+        <h1>Exemplo 4 - Operadores</h1>
+        <input id="teste07">
+        <input id="teste08">
+        <button onclick="calc();">Calcular</button>
+        <p>O resultado da adição é: <span id="teste09"></span></p>
+        <p>O resultado da subtração é: <span id="teste10"></span></p>
+        <p>O resultado da multiplicação é: <span id="teste11"></span></p>
+        <p>O resultado da divisão é: <span id="teste12"></span></p>
+        <p>O resultado da exponenciação é: <span id="teste13"></span></p>
+        <p>O resultado do módulo (resto da divisão) é: <span id="teste14"></span></p>
+        <script>
+        function calc() {
+            //armazena valores dos inputs em variáveis
+            // "Number" -  função interna do JS que converte string em número
+            let num1 = Number(document.getElementById("teste07").value);
+            let num2 = Number(document.getElementById("teste08").value);
+            let resultado = num1 + num2; //adição
+            document.getElementById("teste09").innerHTML = resultado;   
+            
+            resultado = num1 - num2; //subtração
+            document.getElementById("teste10").innerHTML = resultado;
+
+            resultado = num1 * num2; //multiplicação
+            document.getElementById("teste11").innerHTML = resultado;
+
+            resultado = num1 / num2; //divisão
+            document.getElementById("teste12").innerHTML = resultado;
+
+            resultado = num1 ** num2; //exponenciação
+            document.getElementById("teste13").innerHTML = resultado;
+
+            resultado = num1 % num2; //módulo (resto da divisão)
+            document.getElementById("teste14").innerHTML = resultado;
+        }
+        </script>
+
+        <h1>Exemplo 5 - Operadores de comparação - o primeiro numero é maior que o segundo numero</h1>
+        <input id="teste15">
+        <input id="teste16">
+        <button onclick="comp();">Calcular</button>
+        <p id="teste17"></p>
+
+        <script>
+            function comp(){
+                let num1 = Number(document.getElementById("teste15").value);
+                let num2 = Number(document.getElementById("teste16").value);
+                let resultado = num1 > num2; //maior
+                document.getElementById("teste17").innerHTML = resultado;   
+            }
+        </script>
+
+</body>
+</html>

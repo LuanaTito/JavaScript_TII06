@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Condicional</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Estrutura Condicional</h1>
+    </div>
+
+    <script>
+        let nota1 = parseFloat(prompt("Primeira nota:"))
+        let nota2 = parseFloat(prompt('Segunda nota:'))
+        let media = (nota1 + nota2) / 2
+
+        console.log("A primeira nota foi de: " + nota1.toFixed(2) +
+            ", já a segunda nota foi de:" + nota2.toFixed(2) +
+            ".\n Logo a média das notas é: " + media.toFixed(2))
+
+        /* Se a media for maior ou igual a 7, aluno aprovado.
+        Caso contrario será reprovado.*/
+        if (media >= 7) {
+            console.log("APROVADO!")
+        } else {
+            console.log("REPROVADO")
+        }
+
+        console.log("\n")
+        console.log("ENCADEADA:")
+/* Se a media for menor que 3, o desempenho será péssimo.
+Se a media for menor que 5, o desempenho será ruim
+Se a media for menor que 7, o desempenho será regular 
+Se a media for menor que 9, o desempenho será bom
+caso contrário, o desempenho será ótimo*/
+
+
+
+if(media <3){
+console.log("Seu desempenho é PÉSSIMO!")
+}else if(media <5){
+    console.log("Seu desempenho é RUIM!")
+}else if (media <7){
+    console.log("Seu desempenho é REGULAR!")
+}else if(media<9){
+    console.log("Seu desempenho é BOM!")
+}else{
+    console.log("Seu desempenho é ÓTIMO!")
+}
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+       <meta charset="utf-8"/>
+       <title>JavaScript</title>
+	</head>
+
+<body>
+
+<h2></>
+
+<script>
+	var cats = ["Feijão", "Penélope", "Bigode", "Manso", "Folgado"];
+	var info = "Os nomes de meus Gatos são: ";
+	var para = document.querySelector("h2");
+
+		for (var i = 0; i < cats.length; i++)
+		{
+			info += cats[i] + ", ";
+		}
+
+		para.textContent = info;
+
+</script>
+
+<hr>
+<p></p>
+
+<script>
+
+n = 0;
+
+var sequencia = document.querySelector("p");
+
+while (n < 13) {
+  n++;
+  sequencia.textContent = n;
+}
+
+</script>
+
+<hr>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <title>Tabuada</title>
+</head>
+<body>
+<hr>
+Insira um Numero para a TABUADA <input id="numero"> 
+<button onclick="tabuada();">Calcular</button><br>
+
+<script>
+	function tabuada() 
+	{
+		var num1 = Number(document.getElementById("numero").value);
+			
+		for(var contador=1; contador<=10 ; contador++)
+		document.write(num1 + " x " +contador+ " = " + (num1*contador) + "<br />");
+	}
+</script>
+<hr>	
+</body>
+</html>
