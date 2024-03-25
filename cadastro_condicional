@@ -1,0 +1,101 @@
+Copy code
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário com Tabela</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .container{
+        display: flex;
+    }
+    .tabela{
+        margin: 0 40px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Formulário</h2>
+<div class="container">
+<form id="meuFormulario">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="telefone">Telefone:</label><br>
+    <input type="telefone" id="telefone" name="telefone"><br><br>
+    <label for="assunto">Assunto:</label><br>
+    <input type="assunto" id="assunto" name="assunto"><br><br>
+    <label for="mensagem">Mensagem:</label><br>
+    <input type="mensagem" id="mensagem" name="mensagem"><br><br>
+    <button type="button" onclick="salvarDados()">Salvar</button>
+</form>
+<div class="tabela">
+<h2>Dados Salvos</h2>
+
+<table id="tabela">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Assunto</th>
+            <th>Mensagem</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dados da tabela serão inseridos aqui -->
+    </tbody>
+</table>
+</div>
+</div>
+<script>
+    function salvarDados() {
+        var formulario = document.getElementById("meuFormulario");
+        var nome = formulario.elements["nome"].value; //pega o valor 
+        var email = formulario.elements["email"].value;
+        var telefone = formulario.elements["telefone"].value;
+        var assunto = formulario.elements["assunto"].value;
+        var mensagem = formulario.elements["mensagem"].value;
+        
+        // Verifica se ambos os campos estão preenchidos
+        if (nome !== "" && email !== "" && telefone !== "" && assunto !== "" && mensagem !== "") { //verifica se não esta vazio
+            var tabela = document.getElementById("tabela").getElementsByTagName('tbody')[0]; //seleciona o primeiro elemento tbody
+            var novaLinha = tabela.insertRow(tabela.rows.length); //Esta linha insere uma nova linha na tabela. tabela.rows.length retorna o número de linhas atualmente na tabela, então insertRow insere uma nova linha na posição final da tabela.
+            
+            var colunaNome = novaLinha.insertCell(0); //Aqui, estamos inserindo uma nova célula na nova linha para armazenar o nome. insertCell(0) insere uma nova célula na posição 0 (primeira célula) da linha.
+            var colunaEmail = novaLinha.insertCell(1);
+            var colunaTelefone = novaLinha.insertCell(2);
+            var colunaAssunto = novaLinha.insertCell(3);
+            var colunaMensagem = novaLinha.insertCell(4);
+            
+            colunaNome.innerHTML = nome; // substitui os valores
+            colunaEmail.innerHTML = email;
+            colunaTelefone.innerHTML = telefone;
+            colunaAssunto.innerHTML = assunto;
+            colunaMensagem.innerHTML = mensagem;
+            
+            // Limpar o formulário após salvar os dados
+            formulario.reset();
+        } else {
+            alert("Por favor, preencha todos os campos antes de salvar.");
+        }
+    }
+</script>
+
+</body>
+</html>
