@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+ 
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+ 
+        body {
+            background-color: #ECECEC;
+            margin: 8px;
+ 
+            transition: background 0.2s linear;
+        }
+ 
+        #modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+ 
+            border-top: solid green 5px;
+            width: 300px;
+            background-color: #5d6d74;
+            color: #fff;
+ 
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+ 
+            box-shadow: 1px 1px 5px black;
+ 
+            position: fixed;
+            top: 10px;
+            right: -500px;
+            transition: 700ms cubic-bezier(0.22, 0.61, 0.38, 1.13);
+            ;
+        }
+ 
+        header {
+            display: flex;
+            justify-content: end;
+            margin-bottom: 20px;
+        }
+ 
+        header>span {
+            cursor: pointer;
+        }
+ 
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+ 
+        .container {
+            background-color: #fff;
+            padding: 2%;
+            box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.75);
+            ;
+        }
+ 
+        h2 {
+            font-size: 20px;
+        }
+ 
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 0;
+ 
+            margin-top: 15px;
+        }
+ 
+        label {
+            display: block;
+            font-weight: 600;
+            margin: 1% 0;
+        }
+ 
+        input,
+        select,
+        #printMedia1 {
+            height: 32px;
+            width: 100%;
+            border: solid #d1d1d1;
+            padding: 2px;
+            background-color: #ffffff00;
+        }
+ 
+        #printMedia1 {
+            cursor: not-allowed;
+            display: flex;
+            align-items: center;
+            color: #b2b2b2;
+        }
+ 
+        input:focus,
+        select:focus {
+            outline: black solid 1px;
+        }
+ 
+        button {
+            height: 32px;
+            background-color: green;
+            border: none;
+            color: #fff;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+ 
+        button:hover {
+            background-color: rgb(0, 105, 0);
+        }
+ 
+        table {
+            width: 100%;
+        }
+ 
+        tbody {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+ 
+        tr {
+            display: grid;
+        }
+ 
+        th,
+        td {
+            min-height: 40px;
+            padding: 5px;
+        }
+ 
+        th {
+            background-color: green;
+            color: #fff;
+        }
+ 
+        td {
+            grid-template-columns: 1fr 0;
+        }
+ 
+        @media screen and (min-width: 720px) {
+            fieldset {
+                display: flex;
+                align-items: end;
+                gap: 5px;
+ 
+                width: fit-content;
+            }
+ 
+            button {
+                margin: 0;
+            }
+ 
+            tr {
+                grid-template-columns: 2fr repeat(8, 1fr);
+            }
+ 
+            td,
+            th {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+ 
+            tbody {
+                display: unset;
+            }
+        }
+ 
+        .escuro {
+            background-color: #192023;
+            color: #fff;
+        }
+ 
+        .bg-dark-container {
+            background-color: #1f282b;
+            box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.75);
+        }
+ 
+        .inputs {
+            border: solid #2a3639;
+            color: #fff;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+    <div id="modal">
+        <p>Preencha todo o formulário primeiro</p>
+    </div>
+ 
+    <header>
+        <span id="mudarCor">Mudar tema</span>
+    </header>
+    <main>
+        <div class="container">
+            <form action="#">
+                <h2>Cadastro de notas</h2>
+                <fieldset>
+                    <div class="wrapper">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="wrapper">
+                        <label for="serie">Turma:</label>
+                        <select name="serie" id="serie" required>
+                            <option value="">Escolher Turma</option>
+                            <option value="1EM">1EM</option>
+                            <option value="2EM">2EM</option>
+                            <option value="3EM">3EM</option>
+                            <option value="4EM">4EM</option>
+                            <option value="5EM">5EM</option>
+                        </select>
+                    </div>
+                    <div class="wrapper">
+                        <label for="materia">Matéria:</label>
+                        <select name="materia" id="materia" required>
+                            <option value="">Escolher Matéria</option>
+                            <option value="Português">Português</option>
+                            <option value="Matemática">Matemática</option>
+                            <option value="Física">Física</option>
+                            <option value="Geografia">Geografia</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="wrapper">
+                        <label for="bimestre1">Bimestre 1</label>
+                        <input id="bimestre1" type="number" required>
+                    </div>
+                    <div class="wrapper">
+                        <label for="bimestre2">Bimestre 2</label>
+                        <input id="bimestre2" type="number" required>
+                    </div>
+                    <div class="wrapper">
+                        <label for="bimestre3">Bimestre 3</label>
+                        <input id="bimestre3" type="number" required>
+                    </div>
+                    <div class="wrapper">
+                        <label for="bimestre4">Bimestre 4</label>
+                        <input id="bimestre4" type="number" required>
+                    </div>
+                    <div class="wrapper">
+                        <label>Média</label>
+                        <div id="printMedia1">Calcule</div>
+                    </div>
+ 
+                    <button type="button" onclick="clicarBTN(1)">Calcular</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Relatório</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Nome Completo</th>
+                        <th>Turma</th>
+                        <th>Matéria</th>
+                        <th>B1</th>
+                        <th>B2</th>
+                        <th>B3</th>
+                        <th>B4</th>
+                        <th>Média</th>
+                        <th>Situação</th>
+                    </tr>
+ 
+                    <tr>
+                        <td id="printNome">-</td>
+                        <td id="printSerie">-</td>
+                        <td id="printMateria">-</td>
+                        <td id="printB1">-</td>
+                        <td id="printB2">-</td>
+                        <td id="printB3">-</td>
+                        <td id="printB4">-</td>
+                        <td id="printMedia2">-</td>
+                        <td id="printSituacao">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+ 
+    <script>
+ 
+        mudarCor.addEventListener('click', function () {
+            document.body.classList.toggle('escuro');
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(function (container) {
+                container.classList.toggle('bg-dark-container');
+            });
+ 
+            const inputs = document.querySelectorAll('input')
+            inputs.forEach(function (input) {
+                input.classList.toggle('inputs')
+            })
+ 
+            const selects = document.querySelectorAll('select')
+            selects.forEach(function (select) {
+                select.classList.toggle('inputs')
+            })
+ 
+            const optins = document.querySelectorAll('option')
+            optins.forEach(function (option) {
+                option.classList.toggle('escuro')
+            })
+        });
+ 
+ 
+ 
+        function clicarBTN(calcular) {
+            const nomeValor = document.getElementById('nome').value
+            const serieValor = document.getElementById('serie').value
+            const materiaValor = document.getElementById('materia').value
+ 
+            // Váriaveis para pegar valores do bimestre
+            const b1 = parseFloat(document.getElementById('bimestre1').value)
+            const b2 = parseFloat(document.getElementById('bimestre2').value)
+            const b3 = parseFloat(document.getElementById('bimestre3').value)
+            const b4 = parseFloat(document.getElementById('bimestre4').value)
+            // Calculo da média
+            const media = (b1 + b2 + b3 + b4) / 4
+ 
+ 
+            if (nomeValor == "" || serieValor == "" || materiaValor == "" || b1 == "" || b2 == "" || b3 == "" || b4 == "") {
+                const modal = document.getElementById('modal')
+                modal.style.right = '4%'
+                setTimeout(function () {
+                    modal.style.right = '-500px'
+                }, 5500)
+            } else {
+                if (calcular == 1 && media > 7) { // Caso seja maior de 7
+                    document.getElementById('printMedia1').innerHTML = media.toFixed(1)
+                    document.getElementById('printMedia2').innerHTML = media.toFixed(1)
+                    document.getElementById('printSituacao').innerHTML = "Aprovado"
+ 
+                    document.getElementById('printNome').innerHTML = nomeValor
+                    document.getElementById('printSerie').innerHTML = serieValor
+                    document.getElementById('printMateria').innerHTML = materiaValor
+ 
+                    document.getElementById('printB1').innerHTML = b1
+                    document.getElementById('printB2').innerHTML = b2
+                    document.getElementById('printB3').innerHTML = b3
+                    document.getElementById('printB4').innerHTML = b4
+ 
+                    // Reseta o form
+                    document.querySelector('form').reset()
+                } else { // Caso não seja maior que 7
+                    document.getElementById('printMedia1').innerHTML = media.toFixed(1)
+                    document.getElementById('printMedia2').innerHTML = media.toFixed(1)
+                    document.getElementById('printSituacao').innerHTML = "Reprovado"
+ 
+                    document.getElementById('printNome').innerHTML = nomeValor
+                    document.getElementById('printSerie').innerHTML = serieValor
+                    document.getElementById('printMateria').innerHTML = materiaValor
+ 
+                    document.getElementById('printB1').innerHTML = b1
+                    document.getElementById('printB2').innerHTML = b2
+                    document.getElementById('printB3').innerHTML = b3
+                    document.getElementById('printB4').innerHTML = b4
+ 
+                    // Reseta o form
+                    document.querySelector('form').reset()
+                }
+            }
+        }
+ 
+    </script>
+</body>
+ 
+</html>

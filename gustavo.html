@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+ 
+    <style>
+        label {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+ 
+    <main>
+        <div class="container">
+            <form action="#">
+                    <legend>Formulário de contato</legend>
+                    <div class="input-wrapper">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text" placeholder="Nome completo" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="text" placeholder="E-mail" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="tel">Telefone</label>
+                        <input type="tel" id="tel" placeholder="Telefone" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" placeholder="Assunto" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea name="mensagem" id="mensagem" placeholder="Mensagem" required></textarea>
+                    </div>
+                    <button type="button" onclick="btnEnviar(1)">Enviar</button>
+            </form>
+        </div>
+ 
+        <div class="container">
+            <h3>Lista de contatos (recebidos)</h3>
+            <table border="1">
+                <tr>
+                    <th>Nome completo:</th>
+                    <td id="printNome"></td>
+                </tr>
+                <tr>
+                    <th>E-mail:</th>
+                    <td id="printEmail"></td>
+                </tr>
+                <tr>
+                    <th>Telefone:</th>
+                    <td id="printTelefone"></td>
+                </tr>
+                <tr>
+                    <th>Assunto:</th>
+                    <td id="printAssunto"></td>
+                </tr>
+                <tr>
+                    <th>Mensagem:</th>
+                    <td id="printMensagem"></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+ 
+    <script>
+        function btnEnviar(enviar) {
+        let nomeValor = document.getElementById('nome').value
+        let emailValor = document.getElementById('email').value
+        let telefoneValor = document.getElementById('tel').value
+        let assuntoValor = document.getElementById('assunto').value
+        let mensagemValor = document.getElementById('mensagem').value
+ 
+       
+        if(enviar == 1){
+            document.getElementById('printNome').innerHTML = nomeValor
+            document.getElementById('printEmail').innerHTML = emailValor
+            document.getElementById('printTelefone').innerHTML = telefoneValor
+            document.getElementById('printAssunto').innerHTML = assuntoValor
+            document.getElementById('printMensagem').innerHTML = mensagemValor
+        }
+        }
+ 
+       
+       
+    </script>
+</body>
+</html>

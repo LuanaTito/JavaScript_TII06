@@ -1,0 +1,108 @@
+Copy code
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Tabela</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .tabela {
+            margin: 0 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Formulário</h2>
+    <div class="container">
+        <form id="meuFormulario">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="telefone">Telefone:</label><br>
+            <input type="telefone" id="telefone" name="telefone"><br><br>
+            <label for="assunto">Assunto:</label><br>
+            <input type="assunto" id="assunto" name="assunto"><br><br>
+            <label for="mensagem">Mensagem:</label><br>
+            <input type="mensagem" id="mensagem" name="mensagem"><br><br>
+            <button type="button" onclick="salvarDados()">Salvar</button>
+        </form>
+        <div class="tabela">
+            <h2>Dados Salvos</h2>
+
+            <table id="3">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Assunto</th>
+                        <th>Mensagem</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados da tabela serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+<script>
+function salvarDados(){
+    let formulario = document.getElementById('meuFormulario')
+    let nome = formulario.elements["nome"].value //pegar os valores que estão no meu input
+    let email = formulario.elements["email"].value
+    let telefone = formulario.elements["telefone"].value
+    let assunto = formulario.elements["assunto"].value
+    let mensagem = formulario.elements["mensagem"].value
+
+    //verifica se os campos estão preenchidos
+    if(nome !=="" && email !=="" && telefone !=="" && assunto !== "" && mensagem !==""){ 
+        let tabela = document.getElementById("tabela").getElementsByTagName('tbody')[0] // selecionar o primeiro elemento do tbody
+        let novaLinha = tabela.insertRow(tabela.rows.length) //Insere uma linha na tabela 
+        let colunaNome = novaLinha.insertCell(0) //Insere uma célula na linha para armazenar o valor (nome)
+        let colunaEmail = novaLinha.insertCell(1)
+        let colunaTelefone = novaLinha.insertCell(2)
+        let colunaAssunto = novaLinha.insertCell(3)
+        let colunaMensagem = novaLinha.insertCell(4)
+        colunaNome.innerHTML = nome // a coluna será preenchida pelo o que tiver na variável.
+        colunaEmail.innerHTML = email
+        colunaAssunto.innerHTML = assunto
+        colunaTelefone.innerHTML = telefone
+        colunaMensagem.innerHTML = mensagem
+        formulario.reset()
+
+    }else{
+        alert("Por favor, preencha todos os campos antes de salvar")
+    }
+
+}
+
+    </script>
+
+</body>
+
+</html>

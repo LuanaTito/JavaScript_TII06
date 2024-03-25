@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03</title>
+
+    <link rel="stylesheet" href="assets/css/aulaNota.css">
+</head>
+<body id="page">    
+    <header>
+        <div class="container">
+            <div class="top">
+                <div class="logo">
+                    <h1>Notas</h1>
+                </div>
+    
+                <div class="configs">                
+                    <button onclick="tema()">Tema</button>
+                    <!-- <button onclick="modoClaro()">Modo claro</button> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <form name="form-aluno" id="form-aluno" autocomplete="off">
+            <p>Cadastro de Notas</p>
+
+            <div class="dados-aluno">
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+
+                <div>
+                    <label for="serie">Série:</label>
+                    <input type="text" name="serie" id="serie">
+                </div>
+
+                <div>
+                    <label for="materia">Matéria:</label>
+                    <select name="materia" id="materia">
+                        <option value="">Selecione</option>
+                        <option value="Português">Português</option>
+                        <option value="Matemática">Matemática</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dados-aluno-notas">
+                <div>
+                    <label for="bim1">Bimestre 1</label>
+                    <input type="text" name="bim1" id="bim1">
+                </div>
+                <div>
+                    <label for="bim2">Bimestre 2</label>
+                    <input type="text" name="bim2" id="bim2">
+                </div>
+                <div>
+                    <label for="bim3">Bimestre 3</label>
+                    <input type="text" name="bim3" id="bim3">
+                </div>
+                <div>
+                    <label for="bim4">Bimestre 4</label>
+                    <input type="text" name="bim4" id="bim4">
+                </div>
+                <div>
+                    <label for="media">Média</label>
+                    <input type="text" name="media" id="media" readonly>
+                </div>
+                <div>
+                    <button class="btn">Calcular</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="relatorio-aluno">
+            <p>Relatório</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome Completo</th>
+                        <th>Série</th>
+                        <th>Matéria</th>
+                        <th>B1</th>
+                        <th>B2</th>
+                        <th>B3</th>
+                        <th>B4</th>
+                        <th>Média</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody id="relatorio"></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="assets/js/aulaNota.js"></script>
+</body>
+</html>
