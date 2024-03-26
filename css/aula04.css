@@ -18,13 +18,7 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-/* .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-} */
+
 
 .container{
     max-width: 480px;
