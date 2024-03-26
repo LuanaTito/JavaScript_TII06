@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title> Aula 06 - 25-10 (Arrays) </title>
+<link href="css/normalize.css" rel="stylesheet">    
+<link href="css/estilos.css" rel="stylesheet">    
+</head>
+<body>
+<div id="container">
+    <h1>Arrays</h1>
+</div>
+
+<script>
+'use strict';
+
+/* Array é uma coleção/lista de dados indexados,
+ou seja, informações sequenciais começando em 0. */
+
+// Formas de declaração de arrays
+var massas = ['Lasanha', 'Pizza', 'Ravioli', 'Esfiha'];
+var frutas = new Array('kiwi','Goiaba', 'Banana','Manga', 'Morango');
+ 
+massas.push("Espaquete") //para incluir um item no final da lista
+massas.length // mostra o tamanho da lista 
+massas[massas.length-1] //para trazer a ultima posição
+
+var herois = []; // array vazio
+
+
+// Atribuindo dados ao array
+herois[0] = 'Batman';
+herois[1] = 'Hulk';
+herois[2] = 'Homem de Ferro';
+herois[3] = 'Thor';
+
+console.log(
+    "O " +herois[3]+ " almoça " +massas[2]+ " e come " +frutas[1]+ " de sobremesa."
+);
+
+
+/* Operações com métodos e propriedades para arrays */
+
+// length -> propriedade que retorna a quantidade de elementos
+var numeroDeHerois = herois.length;
+console.log("Quantos heróis? " +numeroDeHerois);
+
+// sort() -> método/função que ordena o conteúdo do array
+var massasOrdenadas = massas.sort();
+console.log(massasOrdenadas);
+    var frutasOrdenadas = frutas.sort()
+// reverse() -> método/função que ordena (ao contrário) o conteúdo do array
+var massasOrdenadasAoContrario = massas.reverse();
+console.log(massasOrdenadasAoContrario);   
+
+// indexOf() -> método/função que retorna o índice do elemento
+console.log("Índice da Pizza: " +massas.indexOf("Pizza"));
+
+
+
+/* Array heterogêneo */
+var coisas = [10, "Tiago", new Date, herois[2], "<h2>Olá!</h2>"];
+console.log(coisas);
+
+/* Matriz */
+var programas = [
+    // 0      1
+    ['Word', 'Excel'] ,             //0
+    ['Photoshop', 'Illustrator'],   //1
+    ['Brackets', 'Dreamweaver']     //2
+];
+
+console.log(
+    "Planilhas: " +programas[1][1]+ ". Código: " +programas[2][0]
+);
+
+    
+
+</script>
+
+
+
+    
+</body>
+</html>

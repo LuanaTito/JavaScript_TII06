@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="demo"></p>
+
+
+    <script>
+        var bairro = prompt("Bairro de Entrega: ");
+        var taxaEntrega;
+        switch (bairro) {
+        case "Centro":
+        taxaEntrega = 5.00;
+        break;
+        case "Fragata":
+        case "Três Vendas":
+        taxaEntrega = 7.00;
+        break;
+        case "Laranjal":
+        taxaEntrega = 10.00;
+        break;
+        default:
+        taxaEntrega = 8.00;
+        }
+        alert("Taxa R$: " + taxaEntrega.toFixed(2));
+        
+// ////////////////////////////////////////////////////////////
+        let x = 1;
+    
+    switch (x) {
+      case 0:
+        text = "Off";
+        break;
+      case 1:
+        text = "On";
+        break;
+      default:
+        text = "Sem valor";
+    }
+    document.getElementById("demo").innerHTML = text;
+
+    frutas = "Banana"
+
+    switch (frutas) {
+      case "Banana":
+        alert("olá");
+        break;
+      case "Maçã":
+      alert("Bem-vindo");
+        break;
+      default:
+        alert("Sem valor");
+    }
+
+
+        </script>
+        
+</body>
+</html>

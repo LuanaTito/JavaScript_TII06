@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Exemplo 1</h1>
+    <input id="senha1"  placeholder="Digite a senha" onblur="senha();">
+    <input id="senha2" type="password" placeholder="Confirme a senha">
+    <span id="msg"></span>
+    <br>
+    <button onclick="valida()">Valida senha</button>
+    
+    <script>
+        function valida(){
+            senha1 = document.getElementById("senha1").value;
+            senha2 = document.getElementById("senha2").value;
+            if(senha1 != senha2){
+                document.getElementById("msg").innerHTML = "As senhas não correspondem";
+                document.getElementById("senha2").style.backgroundColor = "#ffbbbb";
+            } else {
+                document.getElementById("msg").innerHTML = "As senhas correspondem";
+                document.getElementById("senha2").style.backgroundColor = "#ffffff";
+            }
+        }
+
+        function senha(){
+            senha1 = document.getElementById("senha1").value;
+            let r = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/;
+
+            if(r.test(senha1)){
+                document.getElementById("msg").innerHTML =""
+            } else {
+                document.getElementById("msg").innerHTML = "<br>A senha deve conter ao menos uma letra minúscula, uma letra maiúscula, um caractere especial e ao menos 8 caracteres";
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

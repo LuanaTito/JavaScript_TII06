@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Exercício 3</title>
+</head>
+
+<body>
+
+    <h1>Programa Repete Fruta</h1>
+    <p>Fruta:
+        <input type="text" id="inFruta">
+    </p>
+    <p>Número:
+        <input type="text" id="inNumero">
+    </p>
+    <input type="button" value="Repetir Fruta" id="btRepetir">
+    <h3 id="outResposta"></h3>
+
+    <script>
+        var btRepetir = document.getElementById("btRepetir");
+        btRepetir.addEventListener("click", repetirFruta); //adicionando o evento dentro da função repetirFruta
+
+
+        function repetirFruta() {
+            var inFruta = document.getElementById("inFruta");
+            var inNumero = document.getElementById("inNumero");
+            var outResposta = document.getElementById("outResposta");
+
+            var fruta = inFruta.value;
+            var num = Number(inNumero.value);
+            // colocar um alert para que os falores sejam inseridos corretamente
+            if (fruta == "" || num == 0) {
+                alert("Informe corretamente os dados!")
+                return
+            }
+
+
+            // variável que vai acumular o número repetido das frutas
+            var resposta = "";
+
+            // cria uma repetição e...
+            for (var i = 0; i < num; i++) {
+                // ... a cada volta, adiciona uma fruta
+                resposta = resposta + fruta + " // "; //espaço para separar as palavras
+            }
+
+            // isola a última fruta, para não exibir * no final
+            resposta = resposta + fruta;
+
+            outResposta.textContent = resposta;
+        }
+    </script>
+</body>
+
+</html>

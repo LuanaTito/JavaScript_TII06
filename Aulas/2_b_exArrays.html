@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+    <script>
+/* Array é uma coleção/lista de dados indexados, ou seja, informações
+sequenciais começndo em 0*/
+
+var massas = ['Lasanha', 'Pizza', 'Ravioli', 'Esfiha']
+massas.push('Espaguete')
+console.log(massas)
+
+var diversos= ['Maria', 25 , 'João', 40]
+
+var herois = []
+
+herois[0] = 'Batman'
+herois[1] = 'Hulk'
+herois[4] = 'Homem de Ferro'
+herois[3] = 'Thor'
+
+herois.push(herois)
+
+console.log(
+    "O " +herois[4]+ " Almoça " +massas[2]+ ". E tem uma idade de " +diversos[1] + "anos."
+)
+
+/* Operações com métodos e propriedades para arrays */
+var frutas2 = ['Goiaba', 'Banana', 'Mamão','Uva', 'Limão']
+// sort() -> método/função que ordena o conteúdo do array
+var frutas2Ordenadas = frutas2.sort()
+// reverse() -> método/função que ordena (ao contrário) o conteúdo do array
+var frutasReverse = frutas2.reverse()
+// indexOf() -> método/função que retorna o índice do elemento
+var frutasIndex = frutas2.indexOf('Uva')
+
+//array heterogêneo
+var coisas =[10, "Luana", new Date, herois, '<h2>Olá</h2>']
+console.log(coisas)
+
+
+
+
+
+
+    </script>
+</body>
+</html>
