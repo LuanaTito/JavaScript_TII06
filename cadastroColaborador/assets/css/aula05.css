@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', sans-serif;
+    background-color: #f5f5f5;
+}
+
+header{
+    margin-bottom: 15px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.container{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.card{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card-title{
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}
+
+label{
+    display: block;
+    font-weight: 800;
+}
+
+input{
+    outline: none;
+}
+
+.form-input{
+    width: 95%;
+    padding: 7px;
+    border: 2px solid #ddd;
+    margin: 10px 5px 10px 0;
+    border-radius: 5px;
+}
+
+.button{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button:hover{
+    cursor: pointer;
+    opacity: .95;
+}
+
+.button-save{
+    color: #fff;
+    background-color: #b4c123;
+}
+
+#relatorio{
+    display: none;
+}
+
+.dis-flex{
+    display: flex;
+}
+
+.justify-content-end{
+    justify-content: flex-end;
+}
+
+.folha-pagamento{
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.folha-pagamento .title-fpg{
+    text-transform: uppercase;
+    color: #555;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.folha-pagamento .info-org,
+.folha-pagamento .info-employee,
+.folha-pagamento .info-job,
+.folha-pagamento .info-payment,
+.folha-pagamento .info-sumary{
+    color: #555;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+
+    display: flex;
+    justify-content: space-between;
+
+    height: 60px;
+}
+
+.folha-pagamento .info-org .name-org,
+.folha-pagamento .info-payment .salary-org{
+    border-right: 1px solid #ccc;
+}
+
+.folha-pagamento .info-org .ins-org,
+.folha-pagamento .info-payment .period-org{
+    padding-left: 10px;
+}
+
+.folha-pagamento .info-org .name-org,
+.folha-pagamento .info-org .ins-org,
+.folha-pagamento .info-payment .salary-org,
+.folha-pagamento .info-payment .period-org{
+    width: 50%;
+}
+
+.folha-pagamento .info-org .name-org p:first-of-type,
+.folha-pagamento .info-org .ins-org p:first-of-type,
+.folha-pagamento .info-payment .salary-org p:first-of-type,
+.folha-pagamento .info-payment .period-org p:first-of-type{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.folha-pagamento .info-employee .re-employee{
+    border-right: 1px solid #ccc;
+
+}
+
+.folha-pagamento .info-employee .re-employee,
+.folha-pagamento .info-employee .ins-employee{
+    width: 15%;
+}
+
+.folha-pagamento .info-employee .name-employee{
+    width: 70%;
+    border-right: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.folha-pagamento .info-employee .ins-employee{
+    padding-left: 10px;
+}
+
+.folha-pagamento .info-employee .re-employee p:first-of-type,
+.folha-pagamento .info-employee .name-employee p:first-of-type,
+.folha-pagamento .info-employee .ins-employee p:first-of-type{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.folha-pagamento .info-job div{
+    width: 25%;
+}
+
+.folha-pagamento .info-job div p:first-of-type{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.folha-pagamento .info-job div:nth-of-type(1),
+.folha-pagamento .info-job div:nth-of-type(2),
+.folha-pagamento .info-job div:nth-of-type(3){
+    border-right: 1px solid #ccc;
+}
+
+.folha-pagamento .info-job div:nth-of-type(2),
+.folha-pagamento .info-job div:nth-of-type(3),
+.folha-pagamento .info-job div:nth-of-type(4){
+    padding-left: 10px;    
+}
+
+.folha-pagamento .info-sumary{
+    height: 40px;
+    border-bottom: none;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.folha-pagamento .info-sumary div:first-child{
+    border-left: none;
+    padding-left: 0;
+}
+
+.folha-pagamento .info-sumary div{
+    width: 25%;
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.folha-pagamento .info-sumary p:first-of-type{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.folha-pagamento .info-sumary-final div:first-of-type{
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.info-sumary-final{
+    border-top: 1px solid #ccc;
+    padding-left: 10px;
+}

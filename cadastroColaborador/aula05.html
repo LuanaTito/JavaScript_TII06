@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05</title>
+
+    <link rel="stylesheet" href="assets/css/aula05.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Aula 05</h1>
+            <h4>Cadastro de colaborador</h4>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <h4 class="card-title">Dados do colaborador</h4>
+                    <form id="form-funcionario" autocomplete="off">
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-input" name="nome">
+                            </div>
+            
+                            <div class="col-2">                
+                                <label for="cargo">Cargo</label>
+                                <input type="text" class="form-input" name="cargo">
+                            </div>
+        
+                            <div class="col-2">
+                                <label for="departamento">Departamento</label>
+                                <input type="text" class="form-input" name="departamento">
+                            </div>
+                            
+                            <div class="col-2">
+                                <label for="salario">Salário</label>
+                                <input type="text" class="form-input" name="salario">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 dis-flex justify-content-end">
+                                <button class="button button-save">Gerar Folha de Pagamento</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="relatorio">
+            <div class="col-12">
+                <div class="card">
+                    <div class="folha-pagamento">
+                        <div class="title-fpg">
+                            <h5>Demonstrativo de Pagamento</h5>
+                        </div>
+
+                        <div class="info-org">
+                            <div class="name-org">
+                                <p>Empregador</p>
+                                <p>Titos</p>
+                            </div>
+                            <div class="ins-org">
+                                <p>CNPJ</p>
+                                <p>00.000.000/0000-00</p>
+                            </div>
+                        </div>
+
+                        <div class="info-employee">
+                            <div class="re-employee">
+                                <p>Regitro</p>
+                                <p>00000</p>
+                            </div>
+                            <div class="name-employee">
+                                <p>Nome Completo</p>
+                                <p id="nome-func">Fulano de Tal</p>
+                            </div>
+                            <div class="ins-employee">
+                                <p>Mês/Ano</p>
+                                <p>03/2024</p>
+                            </div>
+                        </div>
+
+                        <div class="info-job">
+                            <div>
+                                <p>Cargo</p>
+                                <p id="cargo-func">Analista de Sistemas Junior</p>
+                            </div>
+                            <div>
+                                <p>Categoria</p>
+                                <p>Mensalista</p>
+                            </div>
+                            <div>
+                                <p>Departamento</p>
+                                <p id="dp-func">TI</p>
+                            </div>
+                            <div>
+                                <p>Admissão</p>
+                                <p>00/00/0000</p>
+                            </div>
+                        </div>
+
+                        <div class="info-payment">
+                            <div class="salary-org">
+                                <p>Salário base</p>
+                                <p id="salario-base">R$ 0000,00</p>
+                            </div>
+                            <div class="period-org">
+                                <p>Período</p>
+                                <p>01/03/2024 a 31/03/2024</p>
+                            </div>
+                        </div>
+
+                        <div class="info-sumary">
+                            <div>
+                                <p>Cod</p>
+                            </div>
+
+                            <div>
+                                <p>Descrição</p>
+                            </div>
+
+                            <div>
+                                <p>Proventos</p>
+                            </div>
+
+                            <div>
+                                <p>Descontos</p>
+                            </div>
+                        </div>
+
+                        <div class="info-sumary">
+                            <div>
+                                <span>001</span>
+                            </div>
+
+                            <div>
+                                <span>Salário base</span>
+                            </div>
+
+                            <div>
+                                <span id="provento-salario"></span>
+                            </div>
+
+                            <div>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="info-sumary">
+                            <div>
+                                <span>002</span>
+                            </div>
+
+                            <div>
+                                <span>INSS</span>
+                            </div>
+
+                            <div>
+                                <span></span>
+                            </div>
+
+                            <div>
+                                <span id="desc-inss"></span>
+                            </div>
+                        </div>
+
+                        <div class="info-sumary">
+                            <div>
+                                <span>003</span>
+                            </div>
+
+                            <div>
+                                <span>IRPF</span>
+                            </div>
+
+                            <div>
+                                <span></span>
+                            </div>
+
+                            <div>
+                                <span id="desc-irpf"></span>
+                            </div>
+                        </div>
+
+                        <div class="info-sumary">
+                            <div>
+                                <span>004</span>
+                            </div>
+
+                            <div>
+                                <span>VT</span>
+                            </div>
+
+                            <div>
+                                <span></span>
+                            </div>
+
+                            <div>
+                                <span id="desc-vt"></span>
+                            </div>
+                        </div>
+
+                        <div class="info-sumary info-sumary-final">
+                            <div>                                
+                                <p>Salário Líquido</p>
+                            </div>                            
+                            <div>
+                                <span id="salario-liquido"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="assets/js/aula05.js"></script>
+</body>
+</html>
