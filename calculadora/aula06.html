@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/aula06.css">
+</head>
+<body class="page">
+    <div class="sidebar" id="menu">
+        <div class="sidebar-top">
+            <h1>Aula 06</h1>
+            <a href="#" id="toggle-menu">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="navMenu('calc')">
+                        <i class="fa fa-calculator"></i>
+                        <span>Calculadora</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <section class="main">
+        <div class="calc">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Calculadora</h3>
+
+                    <form id="form-calc">
+                        <div class="row">
+                            <div class="col-3">
+                                <input type="number" name="number1" class="form-input">
+                            </div>
+                            <div class="col-3">
+                                <input type="number" name="number2" class="form-input">
+                            </div>  
+                            <div class="col-3">
+                                <select name="operacao" id="operacao" class="form-input">
+                                    <option value="">Selecione</option>
+                                    <option value="soma">Soma</option>
+                                    <option value="divisao">Divisão</option>
+                                    <option value="subtracao">Subtração</option>
+                                    <option value="multiplicacao">Multiplicação</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">                    
+                            <div class="col-2">
+                                <button class="button button-calc">Calcular</button>
+                            </div>
+                            <div class="col-5">
+                                <div id="resultado"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/aula06.js"></script>
+</body>
+</html>

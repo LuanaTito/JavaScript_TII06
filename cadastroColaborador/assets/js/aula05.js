@@ -22,44 +22,50 @@ formFuncionario.addEventListener('submit', (event) => {
     let vtFunc = document.getElementById("desc-vt");
 
 
-    if(formFuncionario.salario.value <= 1412)
+    if (formFuncionario.salario.value <= 1412)
         inss = formFuncionario.salario.value * 0.075;
 
-    else if(formFuncionario.salario.value > 1412 && formFuncionario.salario.value <= 2824)
+    else if (formFuncionario.salario.value > 1412 && formFuncionario.salario.value <= 2824)
         inss = formFuncionario.salario.value * 0.09;
 
-    else if(formFuncionario.salario.value > 2824 && formFuncionario.salario.value < 3200)
+    else if (formFuncionario.salario.value > 2824 && formFuncionario.salario.value <= 3200)
         inss = formFuncionario.salario.value * 0.12;
-    else if(formFuncionario.salario.value > 3200 && formFuncionario.salario.value < 7080)
+    
+    else if (formFuncionario.salario.value > 3200 && formFuncionario.salario.value <= 7080 || formFuncionario.salario.value >7080)
         inss = formFuncionario.salario.value * 0.14;
 
-    
-        if(formFuncionario.salario.value > 1900 && formFuncionario.salario.value <= 2826)
-        irpf = (formFuncionario.salario.value - inss)* 0.075;
 
-    else if(formFuncionario.salario.value > 2826 && formFuncionario.salario.value <= 3751)
-        irpf = (formFuncionario.salario.value - inss)* 0.15;
+    if (formFuncionario.salario.value > 1900 && formFuncionario.salario.value <= 2826)
+        irpf = (formFuncionario.salario.value - inss) * 0.075;
 
-        else if(formFuncionario.salario.value > 3751 && formFuncionario.salario.value <= 4664)
-            irpf = (formFuncionario.salario.value - inss) * 0.225;
-        
-            else if (formFuncionario.salario.value > 4664) 
-            irpf = (formFuncionario.salario.value - inss) * 0.275;
-    
-            vt = formFuncionario.salario.value * 0.06;
+    else if (formFuncionario.salario.value > 2826 && formFuncionario.salario.value <= 3751)
+        irpf = (formFuncionario.salario.value - inss) * 0.15;
 
-            liquido = formFuncionario.salario.value - inss - irpf - vt;
+    else if (formFuncionario.salario.value > 3751 && formFuncionario.salario.value <= 4664)
+        irpf = (formFuncionario.salario.value - inss) * 0.225;
 
-            relatorio.style.display = "block";
+    else if (formFuncionario.salario.value > 4664)
+        irpf = (formFuncionario.salario.value - inss) * 0.275;
 
-            nomeFunc.innerHTML = formFuncionario.nome.value;
-            cargoFunc.innerHTML = formFuncionario.cargo.value;
-            dpFunc.innerHTML = formFuncionario.departamento.value;
-            salarioFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
-            inssFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
-            irpfFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
-            vtFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
-            proventoFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
-            liquidoFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
+    vt = formFuncionario.salario.value * 0.06;
+
+    liquido = formFuncionario.salario.value - inss - irpf - vt;
+
+    relatorio.style.display = "block";
+
+    nomeFunc.innerHTML = formFuncionario.nome.value;
+    cargoFunc.innerHTML = formFuncionario.cargo.value;
+    dpFunc.innerHTML = formFuncionario.departamento.value;
+    salarioFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+
+    inssFunc.innerHTML = `${inss.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+
+    irpfFunc.innerHTML = `${irpf.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+
+    vtFunc.innerHTML = `${vt.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+
+    proventoFunc.innerHTML = `${Number(formFuncionario.salario.value).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+
+    liquidoFunc.innerHTML = `${liquido.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
 
 });
