@@ -2,7 +2,7 @@
 function calcularFatorial(numero) {
     var resultado = 1;
     for (var i = 1; i <= numero; i++) {
-        resultado *= i;
+        resultado *= i; //resultado = resultado* i
     }
     return resultado;
 }
